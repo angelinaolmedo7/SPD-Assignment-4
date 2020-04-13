@@ -1,19 +1,19 @@
 // Given a list of n numbers, determine if it contains any duplicate numbers.
 
-func duplicates (nums: [Int]) {
-  // a hash set would be better but idk how to us those yet :(
-  extant_nums: [Int : Bool] = [:]
+func duplicates (_ nums: [Int]) -> Bool {
+  // Consider replacing with hashset
+  var extantNums: [Int : Bool] = [:]
   for num in nums {
-    if extant_nums[num] == nil {
-      extant_nums[num] = True
+    if extantNums[num] == nil {
+      extantNums[num] = true
     }
     else {
-      return True // there is a duplicate
+      return true  // There is a duplicate in the list
     }
   }
-  return False
+  return false  // There is NOT a duplicate in the list
 }
 
-print(duplicates([0,1,2,3,4]))
-print(duplicates([0,1,2,2,3,4]))
-print(duplicates([-3,-6,0,1,2,-6,4]))
+print(duplicates([0,1,2,3,4]))  // False
+print(duplicates([0,1,2,2,3,4]))  // True
+print(duplicates([-3,-6,0,1,2,-6,4]))  // True
